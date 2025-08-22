@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>PDF Chatbot</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>PDF Chatbot</h1>
+      <small>Upload a PDF, then chat about its contents.</small>
+    </header>
+
+    <section class="upload">
+      <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="pdf" accept="application/pdf" required />
+        <button type="submit">Upload PDF</button>
+      </form>
+      <div id="uploadStatus"></div>
+    </section>
+
+    <section id="chatSection" class="chat hidden">
+      <div id="chatBox" class="chat-box"></div>
+
+      <div class="controls">
+        <input id="messageInput" type="text" placeholder="Ask a question about the PDF..." />
+        <button id="sendBtn">Send</button>
+        <button id="resetBtn" class="secondary">Reset</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
